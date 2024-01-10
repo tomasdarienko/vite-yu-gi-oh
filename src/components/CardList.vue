@@ -1,4 +1,5 @@
 <script >
+
 import axios from 'axios';
 import { store } from '../store';
 import CardCard from './CardCard.vue';
@@ -6,12 +7,15 @@ export default {
 
      components: {
           CardCard
-},
+     },
+
      data() {
           return {
                store
           }
      },
+
+
      methods: {
           getcartlist() {
                axios.get(store.endpoint).then((response) => {
@@ -28,6 +32,9 @@ export default {
 }
 </script>
 
+
+
+
 <template>
      <div class="container">
           <div class="row">
@@ -39,4 +46,9 @@ export default {
 <style lang="scss"scoped>
 @use '../styles/general.scss' as*;
 
+
+.row{
+     background-color: white;
+     padding: 20px;
+}
 </style>
