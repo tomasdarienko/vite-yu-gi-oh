@@ -2,13 +2,15 @@
 <script >
 import AppHeader from './components/AppHeader.vue';
 import CardList from './components/CardList.vue';
+import Select from './components/Select.vue';
 import { store } from './store';
 
 export default {
 
   components: {
     AppHeader,
-    CardList
+    CardList,
+    Select
   },
   data() {
     return {
@@ -24,6 +26,7 @@ export default {
   <body>
     
     <AppHeader />
+    <Select />
     <CardList />
   </body>
 </template>
