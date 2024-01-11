@@ -18,13 +18,15 @@ export default {
 
      methods: {
           getcartlist() {
-               axios.get(store.endpoint).then((response) => {
+               axios.get(store.endpoint_1).then((response) => {
                     this.store.cardlist = response.data.data
 
-                    console.log(response.data.data)
-                    console.log(store.cardlist[4].card_images[0].image_url)
+                    // console.log(response.data.data)
+                    // console.log(store.cardlist[4].card_images[0].image_url)
                })
-          }
+               
+          },
+          
      },
      created() {
           this.getcartlist()
