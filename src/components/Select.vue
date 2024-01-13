@@ -13,14 +13,15 @@ export default {
           }
      },
      methods: {
-          
+
           getarc() {
                axios.get(store.endpoint).then((response) => {
                     this.store.arc = response.data
 
-                    console.log(this.store.arc[0].archetype_name)
+                    // console.log(this.store.arc[0].archetype_name)
                })
-          }
+          },
+
      },
      created() {
           this.getarc()
@@ -35,11 +36,14 @@ export default {
      <div class="container">
           <div class="row">
                <div class="col-2 p-3">
-                    <select id="filter" v-model="store.status">
-                         <option value="" selected>select archetype</option>
-                         <option value="" v-for="archetype , index in this.store.arc">{{ store.arc[index].archetype_name}}</option>
+
+                    <select id="filter" v-model="store.ricerca" @change="$emit('filtra_carte')">
+                         <option value="" >select archetype</option>
+                         <!-- selected -->
+                         <option :value="store.arc[index].archetype_name" v-for="archetype, index in this.store.arc"> {{
+                              store.arc[index].archetype_name }} </option>
                     </select>
-                   
+
                </div>
           </div>
      </div>
@@ -49,6 +53,4 @@ export default {
 
 <style lang="scss"scoped>
 @use '../styles/general.scss' as*;
-
-.col-2 {}
 </style>

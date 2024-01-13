@@ -2,21 +2,22 @@
 <script >
 import AppHeader from './components/AppHeader.vue';
 import CardList from './components/CardList.vue';
-import Select from './components/Select.vue';
+// import Select from './components/Select.vue';
 import { store } from './store';
 
 export default {
 
   components: {
+    
     AppHeader,
     CardList,
-    Select
+    // Select
   },
   data() {
     return {
       store
     }
-  }
+  },
 }
 </script>
 
@@ -24,9 +25,9 @@ export default {
 
 <template>
   <body>
-    
+
     <AppHeader />
-    <Select />
+
     <CardList />
   </body>
 </template>
